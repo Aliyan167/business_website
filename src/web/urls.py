@@ -8,9 +8,6 @@ urlpatterns = [
     path('project/', include('src.web.website.projects.urls')),
     path('service/', include('src.web.website.services.urls')),
     path('blog/', include('src.web.website.blogs.urls')),
-
-
-
     path('accounts/', include('src.web.accounts.urls', namespace='accounts')),
     path('admins/', include('src.web.admins.urls', namespace='admins')),
 ]

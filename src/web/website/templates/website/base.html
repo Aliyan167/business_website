@@ -62,7 +62,7 @@
         <div class="container">
             <div class="primary-header-inner">
                 <div class="header-logo">
-                    <a href="index.html">
+                    <a href="{%  url 'website:home' %}">
                         <img class="logo-dark" src="{% static 'assets/img/logo/logo-1.png' %}" alt="Logo">
                         <img class="logo-light" src="{% static 'assets/img/logo/logo-1.png' %}" alt="Logo">
                     </a>
@@ -110,34 +110,78 @@
 
 {% endblock content %}
 
-
-
-<div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
-<!--scrollup-->
-
-
-<!-- JS here -->
-<script src="{% static 'assets/js/vendor/jquary-3.6.0.min.js' %}"></script>
-<script src="{% static 'assets/js/vendor/bootstrap-bundle.js' %}"></script>
-<script src="{% static 'assets/js/vendor/imagesloaded-pkgd.js' %}"></script>
-<script src="{% static 'assets/js/vendor/waypoints.min.js' %}"></script>
-<script src="{% static 'assets/js/vendor/venobox.min.js' %}"></script>
-<script src="{% static 'assets/js/vendor/odometer.min.js' %}"></script>
-<script src="{% static 'assets/js/vendor/meanmenu.js' %}"></script>
-<script src="{% static 'assets/js/vendor/jquery.isotope.js' %}"></script>
-<script src="{% static 'assets/js/vendor/wow.min.js' %}"></script>
-<script src="{% static 'assets/js/vendor/swiper.min.js' %}"></script>
-<script src="{% static 'assets/js/vendor/split-type.min.js' %}"></script>
-<script src="{% static 'assets/js/vendor/gsap.min.js' %}"></script>
-<script src="{% static 'assets/js/vendor/scroll-trigger.min.js' %}"></script>
-<script src="{% static 'assets/js/vendor/scroll-smoother.js' %}"></script>
-<script src="{% static 'assets/js/vendor/jquery.carouselTicker.js' %}"></script>
-<script src="{% static 'assets/js/vendor/nice-select.js' %}"></script>
-<script src="{% static 'assets/js/ajax-form.js' %}"></script>
-<script src="{% static 'assets/js/slider.js' %}"></script>
-<script src="{% static 'assets/js/contact.js' %}"></script>
-<script src="{% static 'assets/js/main.js' %}"></script>
-</body>
-
-<!-- Mirrored from html.rrdevs.net/runok/index-5.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Sep 2024 09:13:06 GMT -->
-</html>
+<!-- footer-area-start -->
+<footer class="footer-section bg-dark-1">
+    <div class="shape"><img src="{% static 'assets/img/shapes/footer-shape.png' %}" alt="footer"></div>
+    <div class="container">
+        <div class="row footer-wrap">
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <div class="widget-header">
+                        <div class="footer-logo">
+                            <a href="{%  url 'website:home' %}"><img src="{% static 'assets/img/logo/logo-2.png' %}" alt="logo"></a>
+                        </div>
+                    </div>
+                    <p class="mb-20">Centric aplications productize before front end vortals visualize front end is results and value added</p>
+                    <h4 class="title">WE ARE AVAILABLE <span>Mon-Sat: 09.00 am to 6.30 pm</span></h4>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget footer-col-2">
+                    <div class="widget-header">
+                        <h3 class="widget-title">Useful Links</h3>
+                    </div>
+                    <ul class="footer-list">
+                        <li><a href="{%  url 'website:about' %}">About Us</a></li>
+                        <li><a href="{%  url 'website:project' %}">Projects</a></li>
+                        <li><a href="{%  url 'website:service' %}">Our Services</a></li>
+                        <li><a href="{%  url 'website:team' %}">Our Team</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <div class="widget-header">
+                        <h3 class="widget-title">Contact Us</h3>
+                    </div>
+                    <ul class="address-list">
+                        <li><a href="mailto:support@agency.com">support@agency.com</a></li>
+                        <li><a href="tel:+2585492153215">+258 (549) 2158 3215</a></li>
+                        <li>2589 Dorland Street Luke INUA <br> Berlin, Germany</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <div class="widget-header">
+                        <h3 class="widget-title">Subscribe newsletter</h3>
+                    </div>
+                    <div class="footer-form mb-20">
+                        <form action="#" class="rr-subscribe-form">
+                            <input class="form-control" type="email" name="email" placeholder="Email address">
+                            <input type="hidden" name="action" value="mailchimpsubscribe">
+                            <button class="submit">Sign Up</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                    <div class="form-check form-item">
+                        <input class="form-check-input" type="checkbox" value="" id="man">
+                        <label class="form-check-label" for="man">
+                            I’m okay with getting emails and having
+                            that tracked to improve my experience
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row copyright-content">
+                <div class="col-md-6">
+                    <p>© 2024 Runok. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="social-list">
+                        <li class="facebook">
+                            <a href="#"><i class="fab fa-facebook-f"></i></
