@@ -1,0 +1,189 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div id="smooth-wrapper">
+    <div id="smooth-content">
+
+        <section class="page-header" data-background="assets/img/bg-img/page-header-bg.jpg">
+            <div class="overlay"></div>
+            <div class="shapes">
+                <div class="shape shape-1"><img src="{% static 'assets/img/shapes/page-header-shape-1.png' %}"
+                                                alt="shape"></div>
+                <div class="shape shape-2"><img src="{% static 'assets/img/shapes/page-header-shape-2.png' %}"
+                                                alt="shape"></div>
+                <div class="shape shape-3"><img src="{% static 'assets/img/shapes/page-header-shape-3.png' %}"
+                                                alt="shape"></div>
+            </div>
+            <div class="container">
+                <div class="page-header-content text-center">
+                    <h1 class="title">Portfolio Grid 2 Columns</h1>
+                </div>
+            </div>
+        </section>
+        <!-- ./ page-header -->
+
+        <section>
+
+            <div class="container">
+                <form method="get" action="" class="filter-form">
+                    <div class="row gy-3">
+                        <!-- Category Filter -->
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                {{ filter_form.category.label_tag }}
+                                {{ filter_form.category }}
+                            </div>
+                        </div>
+                        <!-- Status Filter -->
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                {{ filter_form.status.label_tag }}
+                                {{ filter_form.status }}
+                            </div>
+                        </div>
+                        <!-- Featured Filter -->
+                        <div class="col-md-3 d-flex align-items-end">
+                            <div class="form-check">
+                                {{ filter_form.is_featured }}
+                                {{ filter_form.is_featured.label_tag }}
+                            </div>
+                        </div>
+                        <!-- Submit Button -->
+                        <div class="col-md-3 d-flex align-items-end">
+                            <button type="submit" class="btn btn-primary w-100">Filter</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+        <section class="case-study pt-130 pb-130 fade-wrapper">
+            <div class="container">
+                <div class="row gy-4">
+                    {% for project in projects %}
+                    <div class="col-md-6">
+                        <div class="cs-item fade-top">
+                            <div class="cs-thumb">
+                                <img src="{{ project.image.url }}" alt="{{project.title}}">
+                                <a class="cs-btn" href="{% url 'project:project-detail' project.id %}">
+                                    <i class="fa-light fa-arrow-right-long"></i>
+                                </a>
+
+                            </div>
+                            <div class="cs-content">
+                                <span class="number">{{ forloop.counter }}</span>
+                                <h3 class="title"><a href="{% url 'project:project-detail' project.id %}">{{project.title}}</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ./ case-study -->
+
+
+        <footer class="footer-section bg-dark-1">
+            <div class="shape"><img src="{% static 'assets/img/shapes/footer-shape.png' %}" alt="footer"></div>
+            <div class="container">
+                <div class="row footer-wrap">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <div class="widget-header">
+                                <div class="footer-logo">
+                                    <a href="index.html"><img src="{% static 'assets/img/logo/logo-2.png' %}"
+                                                              alt="logo"></a>
+                                </div>
+                            </div>
+                            <p class="mb-20">Centric aplications productize before front end vortals visualize front end
+                                is results and value added</p>
+                            <h4 class="title">WE ARE AVAILABLE <span>Mon-Sat: 09.00 am to 6.30 pm</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget footer-col-2">
+                            <div class="widget-header">
+                                <h3 class="widget-title">Useful Links</h3>
+                            </div>
+                            <ul class="footer-list">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="project.html">Our Gallery</a></li>
+                                <li><a href="service.html">Our Services</a></li>
+                                <li><a href="team.html">Our Team</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <div class="widget-header">
+                                <h3 class="widget-title">Contact Us</h3>
+                            </div>
+                            <ul class="address-list">
+                                <li><a href="mailto:support@agency.com">support@agency.com</a></li>
+                                <li><a href="tel:+2585492153215">+258 (549) 2158 3215</a></li>
+                                <li>2589 Dorland Street Luke INUA <br> Berlin, Germany</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <div class="widget-header">
+                                <h3 class="widget-title">Subscribe newsletter</h3>
+                            </div>
+                            <div class="footer-form mb-20">
+                                <form action="#" class="rr-subscribe-form">
+                                    <input class="form-control" type="email" name="email" placeholder="Email address">
+                                    <input type="hidden" name="action" value="mailchimpsubscribe">
+                                    <button class="submit">Sign Up</button>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                            <div class="form-check form-item">
+                                <input class="form-check-input" type="checkbox" value="" id="man">
+                                <label class="form-check-label" for="man">
+                                    I’m okay with getting emails and having
+                                    that tracked to improve my experience
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-area">
+                <div class="container">
+                    <div class="row copyright-content">
+                        <div class="col-md-6">
+                            <p>© 2024 Runok. All Rights Reserved.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="social-list">
+                                <li class="facebook">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li class="pinterest">
+                                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                                </li>
+                                <li class="twitter">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li class="instagram">
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- ./ footer-section -->
+
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,239 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+        <section class="page-header" data-background="assets/img/bg-img/page-header-bg.jpg">
+            <div class="overlay"></div>
+            <div class="shapes">
+                <div class="shape shape-1"><img src="{% static 'assets/img/shapes/page-header-shape-1.png' %}" alt="shape"></div>
+                <div class="shape shape-2"><img src="{% static 'assets/img/shapes/page-header-shape-2.png' %}" alt="shape"></div>
+                <div class="shape shape-3"><img src="{% static 'assets/img/shapes/page-header-shape-3.png' %}" alt="shape"></div>
+            </div>
+            <div class="container">
+                <div class="page-header-content text-center">
+                    <h1 class="title">{{ project.title}}</h1>
+                </div>
+            </div>
+        </section>
+        <!-- ./ page-header -->
+
+        <section class="project-details pt-130 pb-130">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="project-details-content">
+                            <div class="project-details-img">
+                                <img src={{project.image.url}} alt="project">
+                            </div>
+                            <div class="project-details-items">
+                                <div class="project-details-item">
+                                    <div class="icon"><i class="fa-solid fa-user"></i></div>
+                                    <div class="content">
+                                        <span>Clients:</span>
+                                        <h4 class="item-title">{{project.client}}</h4>
+                                    </div>
+                                </div>
+                                <div class="project-details-item">
+                                    <div class="icon"><i class="fa-solid fa-layer-group"></i></div>
+                                    <div class="content">
+                                        <span>Category:</span>
+                                        <h4 class="item-title">{{project.category}}</h4>
+                                    </div>
+                                </div>
+                                <div class="project-details-item">
+                                    <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
+                                    <div class="content">
+                                        <span>Date:</span>
+                                       <h4 class="item-title">{{ project.created_at|date:"Y-m-d" }}</h4>
+                                    </div>
+                                </div>
+                                <div class="project-details-item">
+                                    <div class="icon"><i class="fa-sharp fa-solid fa-location-dot"></i></div>
+                                    <div class="content">
+                                        <span>Address:</span>
+                                        <h4 class="item-title">{{project.address}}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="details-title mb-30">Mobile Application Development</h3>
+                            <p class="mb-30">{{ project.description}}</p>
+                            <div class="row project-details-wrap">
+                                <div class="col-lg-8 col-md-12">
+                                    <div class="project-details-left">
+                                        <div class="details-item">
+                                            <h3 class="details-title">01. The Challenge</h3>
+                                            <p>{{project.challenge}}</p>
+                                        </div>
+                                        <div class="details-item">
+                                            <h3 class="details-title">02. The Solution</h3>
+                                            <p class="desc mb-30">{{project.solution}}</span></p>
+
+                                        </div>
+                                        <div class="details-item">
+                                            <blockquote>
+                                                <div class="icon"><i class="fa-light fa-quote-right"></i></div>
+                                                <div class="content">
+                                                    <p>“{{project.qoute}}”</p>
+                                                    <h4 class="author">{{project.name}}</h4>
+                                                </div>
+                                            </blockquote>
+                                        </div>
+                                        <div class="details-item">
+                                            <h3 class="details-title">03. The Result</h3>
+                                            <p class="desc mb-30">{{project.result}}</span></p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-12">
+                                    <div class="project-details-thumb">
+                                        <div class="details-thumb">
+                                            <img src="{{project.image1.url}}" alt="project">
+                                        </div>
+                                        <div class="details-thumb">
+                                            <img src="{{project.image1.url}}" alt="project">
+                                        </div>
+                                        <div class="details-thumb">
+                                            <img src="{{project.image1.url}}" alt="project">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag-left">
+                                    <ul class="tag-list">
+                                        <li><a href="#">Technology</a></li>
+                                        <li><a href="#">Repair</a></li>
+                                        <li><a href="#">Services</a></li>
+                                    </ul>
+                                </div>
+                                <div class="social-list-wrap">
+                                    <h4 class="follow">Follow Us:</h4>
+                                    <ul class="social-list">
+                                        <li>
+                                            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ./ project-details -->
+
+
+        <!-- ./ case-study -->
+
+
+        <footer class="footer-section bg-dark-1">
+            <div class="shape"><img src="{% static 'assets/img/shapes/footer-shape.png' %}" alt="footer"></div>
+            <div class="container">
+                <div class="row footer-wrap">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <div class="widget-header">
+                                <div class="footer-logo">
+                                    <a href="index.html"><img src="{% static 'assets/img/logo/logo-2.png' %}" alt="logo"></a>
+                                </div>
+                            </div>
+                            <p class="mb-20">Centric aplications productize before front end vortals visualize front end is results and value added</p>
+                            <h4 class="title">WE ARE AVAILABLE <span>Mon-Sat: 09.00 am to 6.30 pm</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget footer-col-2">
+                            <div class="widget-header">
+                                <h3 class="widget-title">Useful Links</h3>
+                            </div>
+                            <ul class="footer-list">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="project.html">Our Gallery</a></li>
+                                <li><a href="service.html">Our Services</a></li>
+                                <li><a href="team.html">Our Team</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <div class="widget-header">
+                                <h3 class="widget-title">Contact Us</h3>
+                            </div>
+                            <ul class="address-list">
+                                <li><a href="mailto:support@agency.com">support@agency.com</a></li>
+                                <li><a href="tel:+2585492153215">+258 (549) 2158 3215</a></li>
+                                <li>2589 Dorland Street Luke INUA <br> Berlin, Germany</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <div class="widget-header">
+                                <h3 class="widget-title">Subscribe newsletter</h3>
+                            </div>
+                            <div class="footer-form mb-20">
+                                <form action="#" class="rr-subscribe-form">
+                                    <input class="form-control" type="email" name="email" placeholder="Email address">
+                                    <input type="hidden" name="action" value="mailchimpsubscribe">
+                                    <button class="submit">Sign Up</button>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                            <div class="form-check form-item">
+                                <input class="form-check-input" type="checkbox" value="" id="man">
+                                <label class="form-check-label" for="man">
+                                    I’m okay with getting emails and having
+                                    that tracked to improve my experience
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-area">
+                <div class="container">
+                    <div class="row copyright-content">
+                        <div class="col-md-6">
+                            <p>© 2024 Runok. All Rights Reserved.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="social-list">
+                                <li class="facebook">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li class="pinterest">
+                                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                                </li>
+                                <li class="twitter">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li class="instagram">
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- ./ footer-section -->
+
+        </div>
+    </div>
+
+{% endblock content %}
