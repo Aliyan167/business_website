@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from . models import (
-    Testimonials, Stats
+    Testimonials, Stats, Contact
 )
 
 
@@ -13,3 +13,8 @@ class TestimonialsAdmin(admin.ModelAdmin):
 @admin.register(Stats)
 class StatsAdmin(admin.ModelAdmin):
     list_display = ('experience', 'projects_completed', 'team_members', 'awards')
+
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('name', 'last_name', 'email', 'phone_num', 'message')

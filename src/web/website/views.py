@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from .blogs.models import BlogPost
-from .services.models import Service
-from .models import Testimonials, Stats
+
 from .blogs import models as blog_models
+from .blogs.models import BlogPost
+from .models import Testimonials, Stats
+from .services.models import Service
 from .teams.models import TeamMember
+from .forms import ContactForm
 
 
 # Create your views here.
@@ -27,6 +29,7 @@ def team_view(request):
 
 from django.core.paginator import Paginator
 
+
 def blog_view(request):
     posts = BlogPost.objects.all()
     paginator = Paginator(posts, 4)  # Adjust number of posts per page
@@ -35,20 +38,25 @@ def blog_view(request):
     return render(request, 'website/blog.html', {'posts': page_obj})  # Use page_obj for pagination
 
 
-
-
 def project_view(request):
     return render(request, 'website/project.html')
 
 
 def contact_view(request):
-    return render(request, 'website/contact.html')
-
+    form = ContactForm()
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'website/contact.html', {'form': form, 'success': True})
+        else:
+            return render(request, 'website/contact.html', {'form': form, 'success': False})
+    return render(request, 'website/contact.html', {'form': form})
 
 def about_view(request):
     testimonials = Testimonials.objects.filter(is_active=True)[:3]
     member = TeamMember.objects.all()[:4]
-    return render(request, 'website/about.html' , {'testimonials': testimonials, 'members': member})
+    return render(request, 'website/about.html', {'testimonials': testimonials, 'members': member})
 
 
 def service_view(request):
@@ -65,5 +73,3 @@ def blog_details_view(request):
 
 def project_details_view(request):
     return render(request, 'website/project-details.html')
-
-

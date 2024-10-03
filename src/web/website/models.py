@@ -13,3 +13,11 @@ class Stats(models.Model):
     projects_completed = models.CharField(max_length=100)
     team_members = models.CharField(max_length=100)
     awards = models.CharField(max_length=100)
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone_num = models.CharField(max_length=100)
+    message = models.TextField()
