@@ -5,23 +5,7 @@
     <div id="smooth-wrapper">
         <div id="smooth-content">
 
-        <section class="page-header" data-background="assets/img/bg-img/page-header-bg.jpg">
-            <div class="overlay"></div>
-            <div class="shapes">
-                <div class="shape shape-1"><img src="{% static 'assets/img/shapes/page-header-shape-1.png' %}" alt="shape"></div>
-                <div class="shape shape-2"><img src="{% static 'assets/img/shapes/page-header-shape-2.png' %}" alt="shape"></div>
-                <div class="shape shape-3"><img src="{% static 'assets/img/shapes/page-header-shape-3.png' %}" alt="shape"></div>
-            </div>
-            <div class="container">
-                <div class="page-header-content text-center">
-                    <h1 class="title">Blog Details</h1>
-
-                </div>
-            </div>
-        </section>
-        <!-- ./ page-header -->
-
-        <section class="blog-details pt-130 pb-130">
+        <section class="blog-details pt-130 pb-130 mt-130">
             <div class="container">
                 <div class="row gy-5">
                     <div class="col-lg-12 col-md-12">
@@ -35,7 +19,7 @@
                             </ul>
                             <div class="blog-details-content">
                                 <h2 class="details-title mb-25">{{ post.title }}</h2>
-                                <p class="mb-40">{{ post.content|safe }}</p>
+                                <p class="mb-40">{{ post.content|safe }} </p>
 
                             </div>
 

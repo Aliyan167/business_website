@@ -1,10 +1,24 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from .blogs.models import BlogPost
+from .services.models import Service
+from .models import Testimonials, Stats
+from .blogs import models as blog_models
+from .teams.models import TeamMember
+
 
 # Create your views here.
 class HomeView(TemplateView):
     template_name = 'website/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['services'] = Service.objects.filter(is_active=True)[:4]
+        context['testimonial'] = Testimonials.objects.filter(is_active=True).first()
+        context['stats'] = Stats.objects.all().first()
+        context['blog_posts'] = blog_models.BlogPost.objects.all().order_by('-created_at')[:3]
+
+        return context
 
 
 def team_view(request):
@@ -32,7 +46,9 @@ def contact_view(request):
 
 
 def about_view(request):
-    return render(request, 'website/about.html')
+    testimonials = Testimonials.objects.filter(is_active=True)[:3]
+    member = TeamMember.objects.all()[:4]
+    return render(request, 'website/about.html' , {'testimonials': testimonials, 'members': member})
 
 
 def service_view(request):

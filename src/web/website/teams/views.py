@@ -19,7 +19,6 @@ class TeamMemberListView(ListView):
 
 
 # Detail view for individual team members
-class TeamMemberDetailView(DetailView):
-    model = TeamMember
-    template_name = 'team.html'
-    context_object_name = 'team_member'
+def team_member_detail(request, pk):
+    team_member = TeamMember.objects.get(pk=pk)
+    return render(request, 'teams/team_member_detail.html', {'team_member': team_member})
